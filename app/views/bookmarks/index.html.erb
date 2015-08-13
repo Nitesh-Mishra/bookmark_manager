@@ -1,0 +1,12 @@
+<h1>All Bookmarks</h1>
+
+<ul id="bookmarks">
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <%= link_to bookmark.title, bookmark_path(bookmark), class: 'bookmark_title', id: "bookmark_#{bookmark.id}" %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Create a New Bookmark", new_bookmark_path, class: "new_bookmark" %>

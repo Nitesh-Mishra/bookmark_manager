@@ -1,0 +1,18 @@
+<%= form_for(@bookmark) do |f| %>
+  <ul>
+  <% @bookmark.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
