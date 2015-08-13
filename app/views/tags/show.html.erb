@@ -1,0 +1,10 @@
+<h1>Bookmarks Tagged with <%= @tag.name %></h1>
+
+<ul>
+  <% @tag.bookmarks.each do |bookmark| %>
+    <li><%= link_to bookmark.title, bookmark_path(bookmark) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "List of Tags ", tags_path %> |
+<%= link_to "Back", :controller => "bookmarks" , :action => "index" %> 
