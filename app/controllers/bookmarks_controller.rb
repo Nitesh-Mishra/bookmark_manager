@@ -1,6 +1,10 @@
 class BookmarksController < ApplicationController
+
+	before_filter :authenticate_user!
+
+
 	def index
-		@bookmarks = Bookmark.all
+		@bookmarks = Bookmark.where(id: current_user.id)
 	end
 
 	def show
