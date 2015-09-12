@@ -1,3 +1,4 @@
+
 <%= form_for(@bookmark) do |f| %>
   <ul>
   <% @bookmark.errors.full_messages.each do |error| %>
@@ -6,17 +7,18 @@
   </ul>
   <p>
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :placeholder => "Title of the Post", :class => "form-control" %>
   </p>
   <p>
     <%= f.label :link %><br />
-    <%= f.text_field :link %>
+    <%= f.text_field :link, :placeholder => "Link of the Post", :class => "form-control" %>
   </p>
   <p>
     <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
+    <%= f.text_field :tag_list, :placeholder => "Tags in comma seperated value like PHP, Python", :class => "form-control" %>
   </p>
+  <br>
   <p>
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary btn-block"%>
   </p>
 <% end %>

@@ -1,12 +1,19 @@
-<h1>All Bookmarks</h1>
-
+<h1 align="center">List of Bookmarks</h1>
+<hr>
+<%= link_to "Create a New Bookmark", new_bookmark_path, class: "new_bookmark" %>
 <ul id="bookmarks">
   <% @bookmarks.each do |bookmark| %>
     <li>
-      <%= link_to bookmark.title, bookmark_path(bookmark), class: 'bookmark_title', id: "bookmark_#{bookmark.id}" %>
+      	<h3><%= bookmark.title %></h3>
+		<p><%= bookmark.link %></p>
+		<p>
+		  Tags:
+		  <% bookmark.tags.each do |tag| %>
+		    <%= link_to tag.name, tag_path(tag) %>
+		  <% end %>
+		</p>
     </li>
   <% end %>
 </ul>
 
 
-<%= link_to "Create a New Bookmark", new_bookmark_path, class: "new_bookmark" %>
