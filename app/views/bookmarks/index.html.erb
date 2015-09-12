@@ -4,10 +4,10 @@
 <ul id="bookmarks">
   <% @bookmarks.each do |bookmark| %>
     <li>
-      	<h3><%= bookmark.title %></h3>
-		<p><%= bookmark.link %></p>
+      	<h3><%= link_to bookmark.title, bookmark_path(bookmark), class: 'bookmark_title', id: "bookmark_#{bookmark.id}" %></h3>
+		<p><b>Link :</b> <%= link_to bookmark.link %></p>
 		<p>
-		  Tags:
+		  <b>Tags : </b>
 		  <% bookmark.tags.each do |tag| %>
 		    <%= link_to tag.name, tag_path(tag) %>
 		  <% end %>

@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
 
 
 	def index
-		@bookmarks = Bookmark.where(id: current_user.id)
+		@bookmarks = Bookmark.where(user_id: current_user.id)
 	end
 
 	def show
@@ -43,7 +43,7 @@ class BookmarksController < ApplicationController
 	private
 
 	def bookmark_params
-  		params.require(:bookmark).permit(:title, :link, :tag_list)
+  		params.require(:bookmark).permit(:title, :link, :tag_list, :user_id)
 	end
 
 end

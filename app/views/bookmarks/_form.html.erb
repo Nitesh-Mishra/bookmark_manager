@@ -17,6 +17,7 @@
     <%= f.label :tag_list %><br />
     <%= f.text_field :tag_list, :placeholder => "Tags in comma seperated value like PHP, Python", :class => "form-control" %>
   </p>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <br>
   <p>
     <%= f.submit :class => "btn btn-primary btn-block"%>
