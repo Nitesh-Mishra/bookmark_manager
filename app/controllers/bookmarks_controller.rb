@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
 
 
 	def index
-		@bookmarks = Bookmark.where(user_id: current_user.id)
+		@bookmarks = Bookmark.order('created_at DESC').paginate(:per_page=>3, :page=> params[:page]).where("title LIKE ? AND user_id = ?", "%#{params[:search]}%", current_user.id)
 	end
 
 	def show

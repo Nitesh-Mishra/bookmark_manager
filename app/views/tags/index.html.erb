@@ -1,10 +1,15 @@
-<h1>List of Tags</h1>
+<h1 align="center">List of Tags</h1>
+<hr>
 <ul id="tags">
+	
   <% @tags.each do |tag| %>
     <li>
       <%= link_to tag.name, tag_path(tag) , class: 'tag_title', id: "tag_#{tag.id}" %>
     </li>
   <% end %>
 </ul>
+<%= link_to "List of Bookmarks", :controller => "bookmarks" , :action => "index" %> 
+
+
 
 

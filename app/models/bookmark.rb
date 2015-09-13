@@ -20,5 +20,14 @@ class Bookmark < ActiveRecord::Base
 		self.tags = new_or_found_tags
 	end
 
+	def self.search(search)
+	  if search
+	    self.where("title like ? } ", "%#{search}%")
+	  else
+	    self.all
+	  end
+	end
+
+
 
 end
